@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:27:55 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/10/15 15:27:57 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PIPEX_BONUS_H
 # define PIPEX_BONUS_H
 
@@ -24,6 +36,7 @@ typedef struct s_data
 	int	index;
 	int	count;
 }				t_data;
+
 enum	e_fd
 {
 	READ,
@@ -54,6 +67,7 @@ char	*strjoin_2times(char *path, const char *str, char *cmd);
 char	*search_cmd(char *cmd);
 char	**cmd_sep_2(char **argv, t_data *data);
 char	**cmd_sep_3(char **argv);
+void	check_status(int *pipe_fd, int status, char *line);
 /*free_bonus_utils.c*/
 void	free_array(char **array);
 void	free_path_list(char *str);
@@ -73,15 +87,5 @@ void	here_doc_process(int *pipe_fd, pid_t id, t_data *data);
 void	fd_close_dup2(int *pipe_fd);
 void	second_call_child(int *new_pipefd, t_data *data);
 void	second_call_parent(int	*new_pipefd, pid_t new_pid);
-/*get_next_line*/
-/*int		get_next_line(const int fd, char **line);
-char	*get_save_line(char *mem);
-char	*get_line(char *mem);
-char	*line_get(char *mem, int fd, int *read_value);
-int	get_next_line(int fd, char **line);
-size_t	new_line_strlen(const char *line);
-int	new_line_return(char *mem);
-size_t	get_strlen (const char *str);
-char	*get_strjoin(char *s1, char const *s2);*/
 
 #endif

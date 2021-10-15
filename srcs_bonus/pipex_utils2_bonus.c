@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pipex_utils2_bonus.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:29:19 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/10/15 15:29:20 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex_bonus.h"
 
 char	*strjoin_2times(char *path, const char *str, char *cmd)
@@ -53,4 +65,13 @@ char	**cmd_sep_2(char **argv, t_data *data)
 		free_cmd_path("malloc", cmd_c);
 	cmd_c[0] = tmp_cmd;
 	return (cmd_c);
+}
+
+void	check_status(int *pipe_fd, int status, char *line)
+{
+	if (status == 1)
+		ft_putstr_endl(line, pipe_fd);
+	if (status == 0)
+		ft_putstr_fd(line, pipe_fd[WRITE]);
+	free(line);
 }

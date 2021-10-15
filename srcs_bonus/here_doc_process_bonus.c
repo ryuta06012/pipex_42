@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   here_doc_process_bonus.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:29:03 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/10/15 15:29:04 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "pipex_bonus.h"
 
 void	second_call_child(int *new_pipefd, t_data *data)
@@ -37,13 +49,13 @@ void	here_doc_stdout(char **argv, int *pipe_fd, int *index)
 		if (count == 0)
 			ft_putstr_fd("pipe heredoc> ", 1);
 		status = get_next_line(0, &line);
-		if (ft_strncmp(line, separator, ft_strlen(separator) + 1) == 0)
+		if (ft_strncmp(line, "LIMITER", 9) == 0)
+		{
+			free(line);
+			line = NULL;
 			break ;
-		if (status == 1)
-			ft_putstr_endl(line, pipe_fd);
-		if (status == 0)
-			ft_putstr_fd(line, pipe_fd[WRITE]);
-		free(line);
+		}
+		check_status(pipe_fd, status, line);
 		if (status == -1)
 			free_path_list("malloc");
 		count++;

@@ -16,7 +16,7 @@ OBJS = $(SRCS:.c=.o)
 
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-CC = gcc
+CC = gcc -g -fsanitize=address
 
 CFLAGS = -Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(HEADER)
 

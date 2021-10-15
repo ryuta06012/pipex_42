@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:28:05 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/10/15 15:30:28 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
@@ -19,7 +31,7 @@ char	*line_get(char *mem, int fd, int *read_value);
 int		get_next_line(int fd, char **line);
 size_t	new_line_strlen(const char *line);
 int		new_line_return(char *mem);
-size_t	get_strlen (const char *str);
+size_t	get_strlen(const char *str);
 char	*get_strjoin(char *s1, char const *s2);
 
 #endif

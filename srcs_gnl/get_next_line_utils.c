@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hryuuta <hryuuta@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/15 15:29:25 by hryuuta           #+#    #+#             */
+/*   Updated: 2021/10/15 15:31:19 by hryuuta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 size_t	new_line_strlen(const char *line)
@@ -28,7 +40,7 @@ int	new_line_return(char *mem)
 	return (0);
 }
 
-size_t	get_strlen (const char *str)
+size_t	get_strlen(const char *str)
 {
 	int	i;
 
